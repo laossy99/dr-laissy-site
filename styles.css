@@ -910,3 +910,125 @@ a.contact-v:hover { color: var(--color-primary); }
 
 .section-contact .col-right { display: flex; flex-direction: column; }
 .contact-cta { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+
+/* ---------- Teaching ---------- */
+.teaching-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(var(--space-10), 5vw, var(--space-16));
+  align-items: start;
+}
+@media (min-width: 1000px) {
+  .teaching-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+}
+
+.subsection-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: var(--color-ink);
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.01em;
+}
+.teaching-note {
+  color: var(--color-text-faint);
+  font-size: var(--text-sm);
+  font-style: italic;
+  margin-bottom: var(--space-8);
+  max-width: 60ch;
+}
+
+/* Course list — replace old two-col with clean stacked cards */
+.course-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+.course-list li {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+  padding: var(--space-6);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-interactive), transform var(--transition-interactive);
+}
+.course-list li:hover { border-color: var(--color-primary); transform: translateX(3px); }
+@media (min-width: 640px) {
+  .course-list li { grid-template-columns: 96px 1fr; gap: var(--space-6); align-items: baseline; }
+}
+.course-code {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+.course-body h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--color-ink);
+  margin-bottom: var(--space-1);
+  line-height: 1.25;
+}
+.course-body p { color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.55; }
+
+/* Aside cards */
+.teaching-aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  position: sticky;
+  top: 110px;
+}
+@media (max-width: 1000px) {
+  .teaching-aside { position: static; }
+}
+.teaching-card {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+.philo-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.philo-list li {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  padding-left: var(--space-5);
+  position: relative;
+}
+.philo-list li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.55em;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  opacity: 0.7;
+}
+.philo-list strong { color: var(--color-ink); font-weight: 600; }
+
+.tool-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.tool-chips li {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-surface-offset);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-full);
+}
