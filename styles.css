@@ -1223,3 +1223,9 @@ a.contact-v:hover { color: var(--color-primary); }
 }
 .pd-list li:last-child { border-bottom: none; }
 .pd-list-compact li { font-size: 0.88rem; }
+
+/* Talks & panels: longer titles need wider columns */
+.talks .memberships-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); }
+.talks .memberships-list li { line-height: 1.5; }
+/* Four PD cards: balanced 2 x 2 on desktop */
+.pd-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
